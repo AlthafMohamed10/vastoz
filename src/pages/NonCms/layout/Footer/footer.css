@@ -1,0 +1,55 @@
+.footer-bg {
+    background: #373833;
+    color: #ffffff;
+}
+.footer-link:hover {
+    color: #fa2742 !important;
+}
+.content-tuned{
+    font-size: 0.8rem;
+    margin-bottom: 34px !important;
+    color: #fff;
+}
+.btn.footer-btn {
+    min-height: 50px; 
+    border-radius:0;
+    background: #243c4f;
+    color: #fff;
+    font-weight:300;
+}
+.btn.footer-btn:hover {
+    background: #fa2742;
+    color: #fff
+}
+.form-control.footer-form {
+    height: 50px;
+    border-color: #ffffff;
+    border-radius: 2px 0px 0px 2px;
+}
+.form-control.footer-form:focus {
+    box-shadow: none !important;
+    border: 2px solid #243c4f;
+    border-color: none;
+}
+.form-control.footer-form:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgba(0,123,255,.25) !important;
+}
+.unsubscribe-link{
+    text-decoration: none !important;
+    font-size: 13px;
+    color: #fff; 
+}
+.unsubscribe-link:hover{
+    text-decoration: none !important;
+    color: #fff;
+}
+.copyrights {
+    top: 1px;
+}
+.social-link:hover {
+    color: #fa2742 !important;
+}

@@ -1,0 +1,14 @@
+[
+    {"cc":"USD","symbol":"US$","name":"United States dollar"},
+    {"cc":"CAD","symbol":"$","name":"Canadian dollar"},
+    {"cc":"EUR","symbol":"\u20ac","name":"European Euro"},
+    {"cc":"AED","symbol":"\u062f.\u0625;","name":"UAE dirham"},
+    {"cc":"AUD","symbol":"$","name":"Australian dollar"},
+    {"cc":"CHF","symbol":"Fr.","name":"Swiss franc"},
+    {"cc":"CNY","symbol":"\u00a5","name":"Chinese/Yuan"},
+    {"cc":"GBP","symbol":"\u00a3","name":"British pound"},
+    {"cc":"HKD","symbol":"HK$","name":"Hong Kong dollar"},
+    {"cc":"JPY","symbol":"\u00a5","name":"Japanese yen"},
+    {"cc":"NZD","symbol":"NZ$","name":"New Zealand dollar"},
+    {"cc":"INR","symbol":"\u20B9","name":"Indian rupee"}
+  ]
