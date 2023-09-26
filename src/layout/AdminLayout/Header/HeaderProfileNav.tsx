@@ -1,5 +1,5 @@
 import {
-  Badge, Dropdown, Nav, NavItem,NavLink,
+  Badge, Dropdown, Nav, NavItem, NavLink,
 } from 'react-bootstrap'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,7 +11,7 @@ import {
   faMessage,
   faUser,
 } from '@fortawesome/free-regular-svg-icons'
-import { PropsWithChildren,useEffect,useState } from 'react'
+import { PropsWithChildren, useEffect, useState } from 'react'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import {
   faGear, faListCheck, faLock, faPowerOff,
@@ -40,10 +40,10 @@ export default function HeaderProfileNav() {
   const router = useRouter()
   const [uname, setUname] = useState()
 
-  useEffect(() => {
-    // Perform localStorage action
-    setUname(localStorage.getItem('username'))
-  }, [])
+  // useEffect(() => {
+  //   // Perform localStorage action
+  //   setUname(localStorage.getItem('username'))
+  // }, [])
   async function logout(): Promise<void> {
     const res = await axios.post('/api/mock/logout')
     if (res.status === 200) {
@@ -54,11 +54,11 @@ export default function HeaderProfileNav() {
   return (
     <Nav>
       <Dropdown as={NavItem}>
-      <Dropdown.Toggle as={NavLink} bsPrefix="hide-caret" id="dropdown-notification">
-            <FontAwesomeIcon icon={faUser} size="lg" />
-          </Dropdown.Toggle>
+        <Dropdown.Toggle as={NavLink} bsPrefix="hide-caret" id="dropdown-notification">
+          <FontAwesomeIcon icon={faUser} size="lg" />
+        </Dropdown.Toggle>
         <Dropdown.Menu className="pt-0">
-        <Dropdown.Header className="bg-light fw-bold">Welcome, {uname}</Dropdown.Header>
+          <Dropdown.Header className="bg-light fw-bold">Welcome, {uname}</Dropdown.Header>
 
           <Dropdown.Header className="bg-light fw-bold">Settings</Dropdown.Header>
 
