@@ -1,33 +1,63 @@
 import React, { useEffect, useRef, useState } from 'react'
-import NavBar from '../layout/NavBar/navbar'
-import CartDetails from 'src/pages/api/CartDetails';
+import NavBar from '../layout/NavBar/navbar';
 
 
 const Cart = () => {
 
   const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
 
   // const inputRef = useRef(null);
+  // const inputRef2 = useRef(null);
 
   function increment() {
     // 👇️ update input value
 
     const updatedCount = count + 1;
 
+    console.log(count);
     console.log(updatedCount);
 
     setCount(updatedCount)
-    // inputRef.current.value = count;
+    // inputRef.current.value = count + 1;
   }
 
   function decrement() {
     // 👇️ update input value
     const updatedCount = count - 1;
 
+    console.log(count);
+    console.log(updatedCount);
+
     if (count != 0) {
       setCount(updatedCount);
 
       // inputRef.current.value = count;
+    }
+    else {
+      setCount(1);
+    }
+  }
+
+  function increment2() {
+    // 👇️ update input value
+
+    const updatedCount = count2 + 1;
+
+    console.log(updatedCount);
+
+    setCount2(updatedCount)
+    // inputRef2.current.value = count2 + 1;
+  }
+
+  function decrement2() {
+    // 👇️ update input value
+    const updatedCount = count2 - 1;
+
+    if (count2 != 0) {
+      setCount2(updatedCount);
+
+      // inputRef2.current.value = count2;
     }
     else {
       setCount(1);
@@ -49,61 +79,107 @@ const Cart = () => {
               </div>
               <div className="card-body">
                 {/* Single item */}
-
-                {CartDetails.map((cartdetails, index) =>
-                  <div className="row">
-                    <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                      {/* Image */}
-                      <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
-                        <img src={cartdetails.image} className="w-100" alt="Nikon z 24" />
-                        <a href="#!">
-                          <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }} />
-                        </a>
-                      </div>
-                      {/* Image */}
+                <div className="row">
+                  <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                    {/* Image */}
+                    <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                      <img src="/assets/img/pages/cameras/camera-nikon-z24.jpg" className="w-100" alt="Nikon z 24" />
+                      <a href="#!">
+                        <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }} />
+                      </a>
                     </div>
-                    <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                      {/* Data */}
-                      <p><strong>{cartdetails.name}</strong></p>
-                      <p>Color: {cartdetails.color}</p>
-                      <p>Size: {cartdetails.size}</p>
-                      <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
-                        <i className="bi bi-trash" />
-                      </button>
-                      <button type="button" className="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
-                        <i className="bi bi-heart" />
-                      </button>
-                      {/* Data */}
-                    </div>
-                    <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                      {/* Quantity */}
-                      <div className="d-flex mb-4" style={{ maxWidth: 300, maxHeight: 38 }}>
-                        <button className="btn btn-primary px-3 me-2" onClick={decrement}>
-                          {/* onClick="this.parentNode.querySelector('input[type=number]').stepDown()"> */}
-                          <i className="bis bi-dash" />
-                        </button>
-                        {count}
-                        <div className="form-outline">
-                          <input id="form1" min={0} name="quantity" defaultValue={1} type="number"
-                            className="form-control" />
-                          <label className="form-label" htmlFor="form1">Quantity</label>
-                        </div>
-                        <button className="btn btn-primary px-3 ms-2" onClick={increment}>
-                          {/* //  onClick={this.parentNode.querySelector('input[type=number]').stepUp()}> + */}
-                          <i className="bi bi-plus" />
-                        </button>
-                        {count}
-                      </div>
-                      {/* Quantity */}
-                      {/* Price */}
-                      <p className="text-start text-md-center">
-                        <strong>{cartdetails.price}$</strong>
-                      </p>
-                      {/* Price */}
-                    </div>
+                    {/* Image */}
                   </div>
-                )}
-
+                  <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                    {/* Data */}
+                    <p><strong>Nikon z 24</strong></p>
+                    <p>Color: black</p>
+                    <p>Size: M</p>
+                    <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
+                      <i className="bi bi-trash" />
+                    </button>
+                    <button type="button" className="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
+                      <i className="bi bi-heart" />
+                    </button>
+                    {/* Data */}
+                  </div>
+                  <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    {/* Quantity */}
+                    <div className="d-flex mb-4" style={{ maxWidth: 300, maxHeight: 38 }}>
+                      <button className="btn btn-primary px-3 me-2" onClick={decrement}>
+                        {/* onClick="this.parentNode.querySelector('input[type=number]').stepDown()"> */}
+                        <i className="bis bi-dash" />
+                      </button>
+                      <div className="form-outline">
+                        <input id="form1" min={0} name="quantity" defaultValue={1} type="number"
+                          className="form-control" />
+                        <label className="form-label" htmlFor="form1">Quantity</label>
+                      </div>
+                      <button className="btn btn-primary px-3 ms-2" onClick={increment}>
+                        {/* //  onClick={this.parentNode.querySelector('input[type=number]').stepUp()}> + */}
+                        <i className="bi bi-plus" />
+                      </button>
+                    </div>
+                    {/* Quantity */}
+                    {/* Price */}
+                    <p className="text-start text-md-center">
+                      <strong>$99</strong>
+                    </p>
+                    {/* Price */}
+                  </div>
+                </div>
+                {/* Single item */}
+                <hr className="my-4" />
+                {/* Single item */}
+                <div className="row">
+                  <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                    {/* Image */}
+                    <div className="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                      <img src="/assets/img/pages/cameras/canon_powershot_v10.jpg" className="w-100" />
+                      <a href="#!">
+                        <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.2)' }} />
+                      </a>
+                    </div>
+                    {/* Image */}
+                  </div>
+                  <div className="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                    {/* Data */}
+                    <p><strong>Canon Powershot V10</strong></p>
+                    <p>Color: black</p>
+                    <p>Size: M</p>
+                    <button type="button" className="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip" title="Remove item">
+                      <i className="bi bi-trash" />
+                    </button>
+                    <button type="button" className="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip" title="Move to the wish list">
+                      <i className="bi bi-heart" />
+                    </button>
+                    {/* Data */}
+                  </div>
+                  <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                    {/* Quantity */}
+                    <div className="d-flex mb-4" style={{ maxWidth: 300, maxHeight: 38 }}>
+                      <button className="btn btn-primary px-3 me-2" onClick={decrement2}>
+                        {/* onClick="this.parentNode.querySelector('input[type=number]').stepDown()"> */}
+                        <i className="bi bi-dash" />
+                      </button>
+                      <div className="form-outline">
+                        <input id="form1" min={0} name="quantity" defaultValue={1} type="number" className="form-control" />
+                        <label className="form-label" htmlFor="form1">Quantity</label>
+                      </div>
+                      <button className="btn btn-primary px-3 ms-2" onClick={increment2}>
+                        {/* onClick="this.parentNode.querySelector('input[type=number]').stepUp()" */}
+                        <i className="bi bi-plus" />
+                      </button>
+                    </div>
+                    {/* Quantity */}
+                    {/* Price */}
+                    <p className="text-start text-md-center">
+                      <strong>$1999.99</strong>
+                    </p>
+                    {/* Price */}
+                  </div>
+                </div>
+                {/* Single item */}
               </div>
             </div>
             <div className="card mb-4">
