@@ -107,7 +107,7 @@ const Products: NextPage<Props> = (props) => {
     height: "",
     depth: "",
     vastlink: "",
-    images:null,
+    images: null,
   };
   const handleSubmit = async (
     values: any,
@@ -119,9 +119,10 @@ const Products: NextPage<Props> = (props) => {
     try {
       const res = await axios.post("api/cmsproduct/newproduct", values, {
         headers: {
-        "Content-Type": "application/json",
+          "Content-Type": "application/json",
 
-        },});
+        },
+      });
       if (res.data.status === 201) {
         toast("Successfully Create new product");
       } else if (res.data.status === 209) {
@@ -406,7 +407,7 @@ const Products: NextPage<Props> = (props) => {
                                     className="form-control"
                                     placeholder="Enter Product Details"
                                     onChange={handleChange}
-                                    value={values.deails}
+                                    value={values.details}
                                     name="details"
                                     required
                                   ></textarea>
@@ -494,11 +495,11 @@ const Products: NextPage<Props> = (props) => {
                                     type="file"
                                     id="productimages"
                                     name="images"
-                                   // value={values.images}
+                                    // value={values.images}
                                     onChange={(e) =>
                                       setFieldValue('images', e.currentTarget.files[0])
                                     }
-                                   // onChange={handleChange}
+                                    // onChange={handleChange}
                                     // onChange={handlebImageChange}
                                     accept="image/*"
                                     multiple
