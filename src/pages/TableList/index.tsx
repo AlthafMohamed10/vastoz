@@ -22,7 +22,7 @@ const TableListing: NextPage<Props> = (props) => {
     prodResource, page, perPage, sort, order,
   } = props
 
-  const prodListURL = `${process.env.NEXT_PUBLIC_TABLE_LIST_API_BASE_URL}products` || ''
+  const prodListURL = `${process.env.NEXT_PUBLIC_TABLE_LIST_API_BASE_URL}productsOne` || ''
 
   // swr: data -> axios: data -> resource: data
   const { data: { data: resource } } = useSWRAxios<Resource<TableList>>({
@@ -46,20 +46,20 @@ const TableListing: NextPage<Props> = (props) => {
 
   return (
     // <AdminLayout>
-      <Card>
-        <Card.Header>Table</Card.Header>
-        <Card.Body>
-          <Pagination meta={resource.meta} />
-          <TableProductList tableList={resource.data} />
-          <Pagination meta={resource.meta} />
-        </Card.Body>
-      </Card>
+    <Card>
+      <Card.Header>Table</Card.Header>
+      <Card.Body>
+        <Pagination meta={resource.meta} />
+        <TableProductList tableList={resource.data} />
+        <Pagination meta={resource.meta} />
+      </Card.Body>
+    </Card>
     // </AdminLayout>
   )
 }
 
 export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
-  const prodListURL = `${process.env.NEXT_PUBLIC_TABLE_LIST_API_BASE_URL}products` || ''
+  const prodListURL = `${process.env.NEXT_PUBLIC_TABLE_LIST_API_BASE_URL}productsOne` || ''
   let page = 1
   if (context.query?.page && typeof context.query.page === 'string') {
     page = parseInt(context.query.page, 10)

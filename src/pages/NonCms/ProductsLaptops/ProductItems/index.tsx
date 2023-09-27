@@ -4,8 +4,8 @@ import React from 'react'
 
 const ProductItems = ({ item }: { item: any }) => {
   return (
-      <div className="col-md-9">
-                <div className="row g-2">
+    <div className="col-md-9">
+      {/* <div className="row g-2">
                     {item.map((product:any,index:any) =>
                       <div className="col-md-4" key={index}>
                           <div className="product py-4">
@@ -26,9 +26,9 @@ const ProductItems = ({ item }: { item: any }) => {
                           </div> 
                       </div>
                     )}
-                </div>
-      </div>
-    
+                </div> */}
+    </div>
+
   )
 }
 
