@@ -1,14 +1,15 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react'
 
-export default function FilterProduct(props: any) {
+function FilterProduct(props: any) {
     return (
         <div className="col-md-9">
             <div className="row g-2">
-                {/* {props.filteredProducts.size === 0 ?
+                {props?.filteredProducts?.length === 0 ?
                     <div className="position-fixed text-center top-50 start-50 translate-middle-products fs-4"><i className="bi bi-emoji-frown fs-2"></i><p>Sorry,we could'nt find any results</p></div>
-                    : props.filteredProducts.map((brandfilter: any, index: any) =>
+                    :
+                    props?.filteredProducts?.map((brandfilter: any, index: any) =>
                         <div className="col-md-4" key={index}>
                             <div className="product py-4">
                                 <span className="off bg-success">{brandfilter.discount}</span>
@@ -27,8 +28,10 @@ export default function FilterProduct(props: any) {
                                 </div>
                             </div>
                         </div>
-                    )} */}
+                    )}
             </div>
         </div>
     );
 }
+
+export default FilterProduct

@@ -84,7 +84,7 @@ const Filters = () => {
                     </div>
                 </div>
             </div>
-            {/* <ProductItems counterValue={counter} /> */}
+            <ProductItems counterValue={counter} />
         </div>
 
 
