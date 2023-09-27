@@ -6,7 +6,7 @@ export default function FilterProduct(props: any) {
     return (
         <div className="col-md-9">
             <div className="row g-2">
-                {props.filteredProducts.size === 0 ?
+                {/* {props.filteredProducts.size === 0 ?
                     <div className="position-fixed text-center top-50 start-50 translate-middle-products fs-4"><i className="bi bi-emoji-frown fs-2"></i><p>Sorry,we could'nt find any results</p></div>
                     : props.filteredProducts.map((brandfilter: any, index: any) =>
                         <div className="col-md-4" key={index}>
@@ -27,7 +27,7 @@ export default function FilterProduct(props: any) {
                                 </div>
                             </div>
                         </div>
-                    )}
+                    )} */}
             </div>
         </div>
     );

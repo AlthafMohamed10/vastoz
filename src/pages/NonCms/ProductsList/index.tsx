@@ -169,7 +169,7 @@ export default function ProductsList() {
       <div className="container-fluid mt-1 mb-2">
         <div className="row g-2">
           <Nav updateFilters={updateFilters} updateFiltersPrice={updateFiltersPrice} updateFiltersType={updateFiltersType} />
-          <FilterProduct filteredProducts={filteredProducts} />
+          {/* <FilterProduct filteredProducts={filteredProducts} /> */}
         </div>
       </div>
     </div>
